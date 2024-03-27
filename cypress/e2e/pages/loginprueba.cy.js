@@ -14,7 +14,7 @@ describe('Proceso de registro y manejo de contactos', () => {
         const registroPage = new RegistroPage();
         registroPage.fillFormAndSubmit();
 
-        const email = 'enriquecypress0@gmail.com';
+        const email = 'enriquecypress01@gmail.com';
         const password = 'Enrique!';
 
         const loginPage = new LoginPage();
