@@ -18,12 +18,12 @@ class AddContactPage {
     //     cy.visit(this.url);
     // }
 
-    fillForm(firstName, lastName, birthdate, email, Phone, street1, city, stateProvince, postalCode,country) {
+    fillForm(firstName, lastName, birthdate, email, phone, street1, city, stateProvince, postalCode,country) {
         cy.get(this.firstNameInput).type(firstName);
         cy.get(this.lastNameInput).type(lastName);
         cy.get(this.birthdateInput).type(birthdate);
         cy.get(this.emailInput).type(email);
-        cy.get(this.phoneInput).type(Phone);
+        cy.get(this.phoneInput).type(phone);
         cy.get(this.street1Input).type(street1);
         cy.get(this.cityInput).type(city);
         cy.get(this.stateProvinceInput).type(stateProvince);
@@ -36,6 +36,7 @@ class AddContactPage {
     submitForm() {
         cy.get(this.submit).click();
     }
+      
 }
 
 export default AddContactPage;

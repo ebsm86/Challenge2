@@ -1,14 +1,33 @@
+import { faker } from "@faker-js/faker";
 class RegistroPage {
-//  visit() {
-//     cy.visit('https://thinking-tester-contact-list.herokuapp.com/addUser');
-//   }
+ navigateRegistro() {
+    cy.visit('https://thinking-tester-contact-list.herokuapp.com/addUser');
+  }
+constructor (){
+  const firstName = faker.person.firstName();
+  const lastName = faker.person.lastName();
+  const email = faker.internet.email();
+  const password = faker.internet.password();
 
+  this.firstName = firstName;
+  this.lastName = lastName;
+  this.email = email;
+  this.password = password;
+
+}
   fillFormAndSubmit() {
-    cy.get('#firstName').type('pepe');
-    cy.get('#lastName').type('Trueno');
-    cy.get('#email').type('enriquecypress01@gmail.com');
-    cy.get('#password').type('Enrique!');
+    cy.get('#firstName').type(this.firstName);
+    cy.get('#lastName').type(this.lastName);
+    cy.get('#email').type(this.email);
+    cy.get('#password').type(this.password);
     cy.get('#submit').click();
+  }
+  addUsers() {
+    cy.get('#add-contact').click()
+  
+  }
+  clicklogout() {
+    cy.get('#logout')
   }
 }
 

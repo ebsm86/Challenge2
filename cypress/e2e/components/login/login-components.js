@@ -1,6 +1,6 @@
 class LoginPage {
-    visit() {
-      cy.visit('https://thinking-tester-contact-list.herokuapp.com/login');
+    navigate() {
+      cy.visit('/');
     }
   
     fillFormAndSubmit(email, password) {
