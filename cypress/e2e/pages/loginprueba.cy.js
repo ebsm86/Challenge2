@@ -12,15 +12,18 @@ const homePage = new HomePage();
 const formPage = new FormPage();
 describe('Proceso de registro y manejo de contactos', () => {
     it.only('Login con usuario y contrseña', () => {
+        
         homePage.navigate();
         homePage.clickSignup();
 
-        
         registroPage.fillFormAndSubmit();
         registroPage.clicklogout();
+        
         loginPage.navigate()
         loginPage.fillFormAndSubmit(registroPage.email, registroPage.password);
         registroPage.addUsers();
+
+        let counter = 0;
         
         cy.task('parseCsv', { filePath: 'users.csv' }).then((contacts) => {
             console.log(contacts);
@@ -37,35 +40,18 @@ describe('Proceso de registro y manejo de contactos', () => {
                     contact.postalCode,
                     contact.country
                 );
+                cy.wait(1000);
                 registroPage.addUsers();
+                 counter++; 
+                if (counter === 3) { 
+                    
+                registroPage.clicklogout(); 
+                }
                 
             });
             
-    });
-
-
-
-    } )
-    it('Debería registrar un usuario, iniciar sesión y crear contactos', () => {
-       
-        homePage.navigate();
-        homePage.clickSignup();
-
-        
-        registroPage.fillFormAndSubmit();
-
-        // const email = 'enriquecypress01@gmail.com';
-        // const password = 'Enrique!';
-
-        
-        // loginPage.visit();
-        // loginPage.fillFormAndSubmit(email, password);
-
-        
-        addUserPage.clickaddUser();
-
-        
-    addUserPage.clickaddUser();
+    }); 
+    
 });  
 });
 

@@ -1,8 +1,6 @@
 import { faker } from "@faker-js/faker";
 class RegistroPage {
- navigateRegistro() {
-    cy.visit('https://thinking-tester-contact-list.herokuapp.com/addUser');
-  }
+
 constructor (){
   const firstName = faker.person.firstName();
   const lastName = faker.person.lastName();
@@ -27,7 +25,7 @@ constructor (){
   
   }
   clicklogout() {
-    cy.get('#logout')
+    cy.get('#logout').click();
   }
 }
 
