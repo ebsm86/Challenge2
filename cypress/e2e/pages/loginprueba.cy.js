@@ -26,7 +26,6 @@ describe('Proceso de registro y manejo de contactos', () => {
         let counter = 0;
         
         cy.task('parseCsv', { filePath: 'users.csv' }).then((contacts) => {
-            console.log(contacts);
             contacts.forEach((contact) => {
                 formPage.fillForm(
                     contact.firstName,
