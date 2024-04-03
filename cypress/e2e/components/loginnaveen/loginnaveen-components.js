@@ -13,7 +13,7 @@ class RegistroMaveen {
   
   }
 
-  searchtype() {
+  searchType() {
     cy.get('.form-control').type('Macbook');
     cy.get('.input-group-btn > .btn > .fa').click();
   }

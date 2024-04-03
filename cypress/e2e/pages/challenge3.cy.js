@@ -6,7 +6,7 @@ describe('Registro y busquwda de aritculo', () => {
         registroMaveen.navigate();
         registroMaveen.fillFormAndSubmit();
         registroMaveen.loginClick();
-        registroMaveen.searchtype();
+        registroMaveen.searchType();
         registroMaveen.LogOut();
     })
 })
