@@ -20,7 +20,7 @@ describe('Proceso de registro y manejo de contactos', () => {
         registroPage.clicklogout();
         
         loginPage.navigate()
-        loginPage.fillFormAndSubmit(registroPage.email, registroPage.password);
+        loginPage.fillFormAndSubmit('enriqu6@tumama.com', '1234567');
         registroPage.addUsers();
 
         let counter = 0;
@@ -42,12 +42,13 @@ describe('Proceso de registro y manejo de contactos', () => {
                 cy.wait(1000);
                 registroPage.addUsers();
                  counter++; 
-                if (counter === 3) { 
+                if (counter === 6) { 
                     
                 registroPage.clicklogout(); 
                 }
                 
             });
+            loginPage.fillFormAndSubmit('enriqu6@tumama.com', '1234567');
             
     }); 
     
